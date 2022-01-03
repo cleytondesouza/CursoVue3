@@ -8,7 +8,12 @@
     <ul v-if="showList">
       <li v-for="(task, index) in tasks" 
       dblclick="complete(task)"
-      :key="`${task}-${index}`">
+      :key="`${task}-${index}`"
+      :class="{
+        'line-through': task.isDone
+
+      }"
+      >
         {{ task.name }}
 
         <button
@@ -60,5 +65,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+  .line-through{
+    text-decoration: line-through;
+  }
+
 </style> 
