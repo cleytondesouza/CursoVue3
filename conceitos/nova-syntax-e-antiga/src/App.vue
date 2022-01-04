@@ -75,6 +75,10 @@ export default {
 
     return {
       state,
+      handleShowHideList,
+      addTask,
+      complete,
+      remove
     };
   },
 };
