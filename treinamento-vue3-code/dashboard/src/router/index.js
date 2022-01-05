@@ -2,9 +2,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 
-const Home = () => import('')
-const Feedbacks = () => import('')
-const Credencials = () => import('')
+const Home = () => import('../views/Home/index.vue')
+const Feedbacks = () => import('../views/Feedbacks/index.vue')
+const Credencials = () => import('../views/Credencials/index.vue')
 
 const routes = [
   {
