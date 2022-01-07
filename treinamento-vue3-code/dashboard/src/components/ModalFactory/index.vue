@@ -16,7 +16,9 @@
       "
       @click="handleModalToogle({ status: false })"
     >
-      <div class="fixed mx-10">
+      <div class="fixed mx-10"
+      :class="state.width"
+      >
         <div
           class="
             flex flex-col
@@ -37,22 +39,47 @@
 
 <script>
 import { reactive } from "vue"
+import useModal from "../../hooks/useModal"
 
+const ModalLogin = defineAsyncComponent(() => import('../ModalLogin'))
 const DEFAULT_WIDTH = "w-3/4 lg:w-1/3"
 
 export default {
+    components:{
+        ModalLogin
+    },
   setup() {
+    const modal = useModal()
     const state = reactive({
       isActive: false,
       component: {},
       props: {},
-      width: DEFAULT_WIDTH
+      width: DEFAULT_WIDTH,
     })
-    function handleModalToogle({ status }) {
+
+    onMounted(() => {
+      modal.listen(handleModalToogle)
+    })
+
+    onBeforeUnmount(() => {
+      modal.off(handleModalToogle)
+    })
+
+    function handleModalToogle(payload) {
+        if(payload.status){
+            state.component = payload.component
+            state.props = payload.props
+            state.width = payload.width ?? DEFAULT_WIDTH
+        } else {
+            state.component = {}
+            state.props = {}
+            state.width = DEFAULT_WIDTH
+        }
 
     }
     return {
       state,
+      handleModalToogle 
     }
   }
 }
