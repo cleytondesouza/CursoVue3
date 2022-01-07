@@ -38,8 +38,8 @@
         </div>
       </div>
       <div class="flex flex-col mt-28">
-        <h1 class="text-4x1 font-black text-white">
-          Tenha um feedbacke. <br>
+        <h1 class="text-4x1 font-black text-white" style="font-size:30px;">
+          Tenha um feedbacker. <br>
           E faça seus clientes mais <br class="hidden lg:inline-block">
           felizes!
         </h1>

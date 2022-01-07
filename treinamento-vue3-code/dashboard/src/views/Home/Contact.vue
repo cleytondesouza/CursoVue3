@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center w-full">
     <div class="flex flex-col items-center w-4/5 max-w-6xl my-16">
-      <h1 class="text-4x1 font-black text-center text-gray-800">
+      <h1 class="text-4x1 font-black text-center text-gray-800" style="font-size:30px">
         Alguma dúvida?
       </h1>
       <p class="text=lg text-center text-gray-800 font-regular">
@@ -29,6 +29,5 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
-
