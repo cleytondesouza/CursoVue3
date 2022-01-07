@@ -1,6 +1,7 @@
 <template>
   <teleport to="body">
     <div
+      v-if="state.isActive"
       class="
         fixed
         top-0
@@ -13,6 +14,7 @@
         h-full
         bg-black bg-opacity-50
       "
+      @click="handleModalToogle({ status: false })"
     >
       <div class="fixed mx-10">
         <div
@@ -25,7 +27,7 @@
           "
         >
           <div class="flex flex-col px-12 py-10 bg-white">
-            Componente Dinamico
+            <component :is="state.component" />
           </div>
         </div>
       </div>
@@ -34,5 +36,24 @@
 </template>
 
 <script>
-export default {};
+import { reactive } from "vue"
+
+const DEFAULT_WIDTH = "w-3/4 lg:w-1/3"
+
+export default {
+  setup() {
+    const state = reactive({
+      isActive: false,
+      component: {},
+      props: {},
+      width: DEFAULT_WIDTH
+    })
+    function handleModalToogle({ status }) {
+
+    }
+    return {
+      state,
+    }
+  }
+}
 </script>
