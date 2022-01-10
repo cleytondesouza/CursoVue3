@@ -11,7 +11,7 @@
         </div>
         <div class="flex">
           <button
-            class="
+          class="
               px-6
               py-2
               font-bold
@@ -23,6 +23,7 @@
             Crie uma Conta
           </button>
           <button
+           @click="() => emit('login')"
             class="
               px-6
               py-2
@@ -38,14 +39,14 @@
         </div>
       </div>
       <div class="flex flex-col mt-28">
-        <h1 class="text-4x1 font-black text-white" style="font-size:30px;">
-          Tenha um feedbacker. <br>
-          E faça seus clientes mais <br class="hidden lg:inline-block">
+        <h1 class="text-4x1 font-black text-white" style="font-size: 30px">
+          Tenha um feedbacker. <br />
+          E faça seus clientes mais <br class="hidden lg:inline-block" />
           felizes!
         </h1>
         <p class="text-lg font-medium text-white">
           Receba ideias, reclamações e feedbacks com um
-          <br class="hidden lg:inline-block">
+          <br class="hidden lg:inline-block" />
           simples widget na página.
         </p>
         <div>
@@ -69,19 +70,23 @@
   </header>
 </template>
 <script>
-export default {}
+export default {
+  setup (_, { emit }) {
+    return { emit }
+  }
+}
 </script>
 <style lang="postcss" scoped>
 .header {
   @apply bg-brand-main w-full flex justify-center;
-  height: 700px
+  height: 700px;
 }
 
 .header-group {
   @apply flex flex-col w-4/5 max-w-6xl;
 }
-@media(min-width: 640px){
-  .header-group{
+@media (min-width: 640px) {
+  .header-group {
     background-image: url(../../assets/images/blue_balloons.png);
     background-size: 628px;
     background-position: 90% 100%;
