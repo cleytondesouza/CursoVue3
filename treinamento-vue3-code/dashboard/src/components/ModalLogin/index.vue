@@ -63,20 +63,21 @@
 import { reactive } from 'vue'
 import { useField } from 'vee-validate'
 import useModal from '../../hooks/useModal'
+import { validateEmptyAndLength3, validateEmptyEmail } from '../../utils/validators'
 export default {
   setup () {
     const modal = useModal()
     const {
       value: emailValue,
       errorMessage: emailErrorMessage
-    } = useField('email')
+    } = useField('email', validateEmptyEmail)
         const {
       value: passwordValue,
       errorMessage: passwordErrorMessage
-    } = useField('password')
+    } = useField('password', validateEmptyAndLength3)
     const state = reactive({
       hasErrors: false,
-      isLoading: false,
+      isLoading: false, 
       email: {
         value: emailValue,
         errorMessage: emailErrorMessage
