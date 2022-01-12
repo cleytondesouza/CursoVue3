@@ -1,4 +1,4 @@
-<template>
+s<template>
   <div class="flex justify-between">
     <h1 class="text-4xl font-black text-gray-800">
     Entre na sua conta

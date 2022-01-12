@@ -1,4 +1,5 @@
 import axios from 'axios'
+import AuthService from './auth'
 const API_ENVS = {
     production: '',
     development: '',
@@ -7,3 +8,7 @@ const API_ENVS = {
 const httpClient = axios.create({
     baseURL: API_ENVS.local
 })
+
+export default {
+    auth:  AuthService(httpClients)
+}
