@@ -1,4 +1,4 @@
-
+/*Criação de do Router e Hstory */
 import { createRouter, createWebHistory } from 'vue-router'
 
 
