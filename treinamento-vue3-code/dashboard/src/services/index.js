@@ -1,4 +1,3 @@
-/**Implementaão do Login via AXIOS */
 import axios from 'axios'
 import AuthService from './auth'
 const API_ENVS = {

@@ -1,4 +1,4 @@
-s<template>
+<template>
   <div class="flex justify-between">
     <h1 class="text-4xl font-black text-gray-800">
     Entre na sua conta
@@ -71,13 +71,13 @@ export default {
       value: emailValue,
       errorMessage: emailErrorMessage
     } = useField('email', validateEmptyEmail)
-        const {
+    const {
       value: passwordValue,
       errorMessage: passwordErrorMessage
     } = useField('password', validateEmptyAndLength3)
     const state = reactive({
       hasErrors: false,
-      isLoading: false, 
+      isLoading: false,
       email: {
         value: emailValue,
         errorMessage: emailErrorMessage
