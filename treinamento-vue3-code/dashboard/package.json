@@ -9,7 +9,15 @@
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
   },
- 
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "axios": "^0.24.0",
+    "core-js": "^3.6.5",
+    "tiny-emitter": "^2.1.0",
+    "vee-validate": "^4.5.7",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0"
+  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-e2e-cypress": "~4.5.0",
