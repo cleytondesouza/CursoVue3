@@ -9,3 +9,4 @@ export default httpClient => ({
         }
     }
 })
+/* Sincronização dos dados do elementy */
