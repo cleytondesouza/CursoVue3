@@ -4,9 +4,18 @@ export default httpClient => ({
             email,
             password
         })
+        let errors = null
+
+        if (!response.data) {
+            errors = {
+                status: response.request.status,
+                ststusText: response.request.statusText
+            }
+        }
+
         return {
-            data: response.data
+            data: response.data,
+            errors
         }
     }
 })
-/* Sincronização dos dados do elementy */

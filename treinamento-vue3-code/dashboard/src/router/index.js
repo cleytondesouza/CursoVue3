@@ -1,6 +1,4 @@
-/*Criação de do Router e Hstory */
 import { createRouter, createWebHistory } from 'vue-router'
-
 
 const Home = () => import('../views/Home/index.vue')
 const Feedbacks = () => import('../views/Feedbacks/index.vue')

@@ -10,5 +10,5 @@ const httpClient = axios.create({
 })
 
 export default {
-    auth:  AuthService(httpClients)
+    auth:  AuthService(httpClient)
 }
