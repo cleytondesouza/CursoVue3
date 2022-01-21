@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { toRaw } from 'vue'
 import AuthService from './auth'
 const API_ENVS = {
     production: '',
@@ -7,6 +8,16 @@ const API_ENVS = {
 }
 const httpClient = axios.create({
     baseURL: API_ENVS.local
+})
+
+httpClient.interceptors.response.use((response) => response, (error) => {
+    const canThrowAnError = error.request.status = 0 ||
+    error.request.status === 500
+
+    if (canThrowAnError) {
+        throw new Error(error.message)
+    }
+    return error
 })
 
 export default {
