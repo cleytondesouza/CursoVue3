@@ -15,3 +15,4 @@ export default function useModal () {
   }
   return { open, close, listen, off }
 }
+/*Recurso de Modal de Componentes Completo*/

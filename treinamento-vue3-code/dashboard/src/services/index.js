@@ -23,3 +23,4 @@ httpClient.interceptors.response.use((response) => response, (error) => {
 export default {
     auth:  AuthService(httpClient)
 }
+/* Problema de Autentficação Resolvidos*/

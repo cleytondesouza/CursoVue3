@@ -36,4 +36,5 @@ export default {
     }
   }
 }
+/*Script de Home completo*/
 </script>
