@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs e DataBinding</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="src/script.js" defer></script>
+</head>
+<body>
+    <div id="cad">
+        <p>Nome: {{ nome }}</p>
+        <p>Idade: {{ idade }}</p>
+        <p>Telefone: {{ telefone }}</p>
+        <p>Email: {{ email }}</p>
+
+        <form id="app-form">
+            <label for="Nome">Nome </label>
+            <input type="text" v-model="input_name" placeholder="Digite seu nome"><br>
+            <label for="Idade">Idade </label>
+            <input type="text" v-model="input_idade" placeholder="Digite sua Idade"><br>
+            <label for="Telefone">Telefone </label>
+            <input type="text" v-model="input_telefone" placeholder="Digite seu Telefone"><br>
+            <label for="Email">Email </label>
+            <input type="text" v-model="input_email" placeholder="Digite seu Email"><br>
+            <input type="submit" value="Enviar" v-on:click="submitForm">
+        </form>
+         <!--Data Binding - Replica tudo que é digitado no input-->
+        <p>Replicação Nome: {{ input_name}}</p>
+        <p>Replicação Idade: {{ input_idade}} anos</p>
+        <p>Replicação Telefone: {{ input_telefone }}</p>
+        <p>Replicação Email: {{ input_email }}</p>
+
+    </div>
+    
+</body>
+</html>
